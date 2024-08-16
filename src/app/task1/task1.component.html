@@ -1,0 +1,45 @@
+<!-- Q1 -->
+
+<div class="container my-4">
+    <div class="row">
+        <div class="card-body">
+            <h1>Enter UserName : </h1>
+            <!-- Update UserName Via Two-Way-Binding -->
+            <input type="text" class="forms-control" [(ngModel)]="userName"
+                (ngModelChange)="onUsernameChange($event)" />
+            <!-- Output UserName Via String Interpolation -->
+            <p> {{userName}}</p>
+            <button [disabled]="!isButtonDisabled" class="btn btn-primary" (click)="onClick()"> Reset</button>
+        </div>
+    </div>
+</div>
+<hr>
+<hr>
+
+<!-- Q2 -->
+
+<div class="container my-4">
+    <div class="row">
+        <div class="card-body">
+
+            <button class="btn btn-primary" (click)="onCheckDisplay()"> Display Details</button>
+            <p *ngIf="checkDisplay">Secret Password = tunas</p>
+            <!-- <p *ngFor="let btnClick of itemsFromFifth" [ngStyle]="buttonClickStyles" [ngClass]="buttonClickClasses">
+                {{btnClick }}</p> -->
+
+            <div [ngStyle]="buttonClickStyles" [ngClass]="buttonClickClasses">
+                @for( btnClick of itemsFromFifth ;track btnClick ){
+                <div>
+                    {{btnClick}}
+
+                </div>
+                }
+
+            </div>
+
+
+        </div>
+    </div>
+</div>
+<hr>
+<hr>

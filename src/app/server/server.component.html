@@ -1,0 +1,79 @@
+<!-- interpolation string -->
+<h1>
+    server with id {{serverId}} and it's Status is {{serverStatus}}
+</h1>
+<hr>
+<h1>
+    server with id {{serverId}} and it's Status is {{getServerStatus()}}
+</h1>
+<hr>
+<!--    Property Binding  -->
+<button [disabled]="!allowAddServer" class="btn btn-primary">
+    Add Server
+</button>
+
+<!-- interpolation VS. Property Binding ==> interpolation just for string -->
+<button disabled="!allowAddServer" class="btn btn-primary">
+    Add Server
+</button>
+
+<!-- <h1> {{"hello " + allowAddServer }}</h1>  ?????????????-->
+
+
+<!-- Event Binding -->
+<hr>
+<button class="btn btn-primary" (click)="onCreatedServer() ">
+    Add Server
+</button>
+<h2> {{serverCreationStatus}}</h2>
+
+<!-- two way binding -->
+<hr>
+<input type="text" class="form-control" [(ngModel)]="serverName" />
+
+{{serverName}}
+
+<hr>
+<!--   ngIF before angular 16 -->
+<!-- <p *ngIf="isServerCreated">
+    server one Created successfully
+</p> -->
+
+<!-- ngIF Else before angular 16  -->
+<!-- <p *ngIf="isServerCreated ; else noServer">
+    server one Created successfully
+</p>
+<ng-template #noServer>
+    No Server Created
+</ng-template>   -->
+
+<hr>
+<!--   ngIF in angular 16,17,18 -->
+@if(isServerCreated){
+<p> server one Created successfully
+</p>
+}
+@else{
+<p> No Server Created
+</p>
+}
+
+<hr>
+<hr>
+<!-- ngStyle -->
+
+<p [ngStyle]="serverStyles"> No Server Created</p>
+
+<hr>
+<p [ngClass]="serverClasses"> No Server Created</p>
+
+<!-- ngFor before angular 16 -->
+<!-- <p *ngFor="let server of Servers">
+    {{server}}
+</p> -->
+
+<!-- ngFor in angular 16,17,18 -->
+ @for(server of Servers ;track server)
+ {
+    {{server}}
+ }

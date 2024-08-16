@@ -1,0 +1,18 @@
+/* src/app/navbar/navbar.component.css */
+.navbar-brand {
+    font-weight: bold;
+  }
+  
+  .nav-link {
+    margin-left: 10px;
+  }
+  
+  .nav-link.active {
+    font-weight: bold;
+    color: #f8f9fa !important;
+  }
+  
+  .navbar-toggler-icon {
+    background-image: url('data:image/svg+xml;charset=utf8,...'); /* Customize icon */
+  }
+  
